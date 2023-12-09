@@ -28,8 +28,8 @@ body::before{
 .container
 {
     position: relative;
-    width: 350px;
-    height: 340px;
+    width: 500px;
+    height: 450px;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -37,8 +37,16 @@ body::before{
     align-items: center;
     z-index: 1000;
     transition: 0.5s;
-    background-color: rgba(255, 255, 255, 0.5); /* Add a background color for visibility */
+    overflow: hidden;
+}
 
+.container ::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from 0deg, #F2D2BD 0%, #F2D2BD 10%, transparent 10%, transparent 80%, #F2D2BD 100%);
+    border-radius: 20px;
 }
 
 .container span {
@@ -56,7 +64,7 @@ body::before{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(5px);
 }
 .container span::after {
     content: '';
@@ -66,5 +74,5 @@ body::before{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: blur(10px);
+    filter: blur(5px);
 }
