@@ -28,8 +28,8 @@ body::before{
 .container
 {
     position: relative;
-    width: 500px;
-    height: 450px;
+    width: 550px;
+    height: 500px;
     border-radius: 15px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
     display: flex;
