@@ -18,6 +18,6 @@ body::before{
     content: '';
     position: absolute;
     inset: 0;
-    background: url(/img/bg.jpg);
+    background: url('../img/bg.jpg');
     background-attachment: fixed;
 }
