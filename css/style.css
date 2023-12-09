@@ -65,7 +65,7 @@ body::before{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
+    filter: blur(2px);
 }
 .container span::after {
     content: '';
@@ -75,5 +75,5 @@ body::before{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
+    filter: blur(2px);
 }
