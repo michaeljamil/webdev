@@ -45,8 +45,9 @@ body::before{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: repeating-conic-gradient(from 0deg, #F2D2BD 0%, #F2D2BD 10%, transparent 10%, transparent 80%, #F2D2BD 100%);
+    background: repeating-conic-gradient(from 0deg, #CC5500 0%, #CC5500 10%, transparent 10%, transparent 80%, #CC5500 100%);
     border-radius: 20px;
+    animation: animate 2.5s linear infinite;
 }
 
 .container span {
