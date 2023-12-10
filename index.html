@@ -11,8 +11,8 @@
         <span></span>
         <span></span>
         <span></span>
-        <form id="signin">
-            <h2>Admin Login</h2><br>
+        <form id="signinForm">
+            <h2>Admin Login</h2>
             <div class="inputBox">
                 <input type="text" placeholder="Username">
             </div>
@@ -20,13 +20,90 @@
                 <input type="password" placeholder="Password">
             </div>
             <div class="inputBox group">
-                <a href="#">Forgot Password</a>
-                <a href="#" id="signup"> Sign Up</a>
+                <a href="#" id="signup">Sign Up</a>
             </div>
             <div class="inputBox">
-                <input type="submit" placeholder="Sign In">
+                <input type="submit" value="Sign In">
+            </div>
+            <div class="inputBox group">
+                <b>An Employee?&nbsp</b><a href="#" id="employeeLogin"> Employee Login </a>
             </div>
         </form>
+
+        <form id="employeeForm">
+            <h2>Employee Login</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="inputBox group">
+                <a href="#" id="signup">Sign Up</a>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Sign In">
+            </div>
+            <div class="inputBox group">
+                <a href="#"> An Admin? <b id="signup"><u> Admin Login</u></b></a>
+            </div>
+        </form>
+        
+        <form id="signupForm">
+            <h2>Registration</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Create Password">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Confirm Password">
+            </div>
+            <div class="inputBox">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Register Account">
+            </div>
+            <div class="inputBox group">
+                <a href="#"> Already Have an Account? <b id="signin"> Login</b></a>
+            </div>
+        </form>
+
+        
+
     </div>
+    <script>
+        let signup = document.querySelector('#signup');
+        let signin = document.querySelector('#signin');
+        let employeeLogin = document.querySelector('#employeeLogin');
+        let body = document.querySelector('body');
+        signup.onclick = function () {
+        body.classList.add('signup');
+        body.classList.remove('employeeLogin'); 
+        }
+
+        signin.onclick = function () {
+            body.classList.remove('signup');
+            body.classList.remove('employeeLogin');
+        }
+
+        employeeLogin.onclick = function () {
+            body.classList.add('employeeLogin');
+        }
+
+        let employeeSignup = document.querySelector('#employeeForm #signup');
+        employeeSignup.addEventListener('click', function () {
+            body.classList.remove('employeeLogin');
+            body.classList.add('signup');
+        });
+
+        let employeeAdminLogin = document.querySelector('#employeeForm #signup u');
+        employeeAdminLogin.addEventListener('click', function () {
+            body.classList.remove('employeeLogin');
+            body.classList.remove('signup');
+        });
+    </script>
 </body>
 </html>
