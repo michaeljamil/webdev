@@ -11,19 +11,19 @@
         <span></span>
         <span></span>
         <span></span>
-            <form id="signinForm">
+            <form action="login.php" method="post" id="signinForm">
                     <h2>Admin Login</h2>
                     <div class="inputBox">
-                        <input type="text" placeholder="Username">
+                        <input type="text" name="user_name" placeholder="Username">
                     </div>
                     <div class="inputBox">
-                        <input type="password" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                     </div>
                     <div class="inputBox group">
                         <a href="#" id="signup">Sign Up</a>
                     </div>
                     <div class="inputBox">
-                            <input type="submit" value="Sign In">
+                            <input type="submit" name="submit" value="Sign In">
                     </div>
                     <div class="inputBox group">
                         <b>An Employee?&nbsp</b><a href="#" id="employeeLogin"> Employee Login </a>
