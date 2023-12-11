@@ -1,29 +1,23 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "attendance_db";
+    include "connect.php";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    if (isset($_POST['submit'])) {
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-
-        $sql = "INSERT INTO accounts (username, pass, email) VALUES ('$user_name', '$password', '$email')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Record inserted successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+    //Access the attendance_db
+    if ($conn->select_db("attendance_db")) {
+        //Checks if HTTP POST method is used
+        if (isset($_POST['submit'])) {
+            $user_name = $_POST['user_name'];
+            $password = $_POST['password'];
+            $email = $_POST['email'];
+            
+            //SQL query to insert data to 'accounts' table
+            $sql = "INSERT INTO accounts (username, password, email) VALUES ('$user_name', '$password', '$email')";
     
-     // Close the connection
-     $conn->close();
+            if ($conn->query($sql)) {
+                echo "Record inserted successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        
+        $conn->close();
     }
 ?>
