@@ -2,7 +2,7 @@
     include "connect.php";
 
     //Access the attendance_db
-    if ($conn->select_db("attendance_db")) {
+    ($conn->select_db("attendance_db"))
         //Checks if HTTP POST method is used
         if (isset($_POST['submit'])) {
             $user_name = $_POST['user_name'];
