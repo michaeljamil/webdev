@@ -12,10 +12,10 @@
 
     if (isset($_POST['submit'])) {
         $user_name = $_POST['user_name'];
-        $passwrd = $_POST['passwrd'];
+        $password = $_POST['password'];
         $email = $_POST['email'];
 
-        $sql = "INSERT INTO accounts (username, pass, email) VALUES ('$user_name', '$passwrd', '$email')";
+        $sql = "INSERT INTO accounts (username, pass, email) VALUES ('$user_name', '$password', '$email')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Record inserted successfully";
