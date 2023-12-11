@@ -9,6 +9,7 @@
 }
 
 
+
 body.adminlogin{
     display: flex;
     justify-content: center;
@@ -588,6 +589,7 @@ select {
 }
 .link-text {
     margin: 0;
+    font-size: 0.8em;
     width: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
