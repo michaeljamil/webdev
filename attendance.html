@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Table</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Icons+Round'><link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <nav id="navbar" class="attendance">
+        <ul class="navbar-items flexbox-col">
+            <li class="navbar-logo-logo flexbox-left">
+            <a href="menu.html" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                    <ion-icon name="leaf-sharp"></ion-icon>
+                </div>
+                <span class="link-text">Dashboard</span>
+            </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+            <a href="#" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                <ion-icon name="calendar-outline"></ion-icon>
+                </div>
+                <span class="link-text">Attendance Table</span>
+            </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+            <a href="maintenance.html" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                <ion-icon name="build-outline"></ion-icon>
+                </div>
+                <span class="link-text">Maintenance</span>
+            </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+            <a href="#loginReport" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                <ion-icon name="folder-open-outline"></ion-icon>
+                </div>
+                <span class="link-text">Login Report</span>
+            </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+            <a href="#dailylogin" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                <ion-icon name="pie-chart-outline"></ion-icon>
+                </div>
+                <span class="link-text">Daily Report</span>
+            </a>
+            </li>
+            <li class="navbar-item flexbox-left">
+            <a href="#monthlylogin" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                <ion-icon name="calendar-number-outline"></ion-icon></ion-icon>
+                </div>
+                <span class="link-text">Monthly Report</span>
+            </a>
+            </li>
+        </ul>
+        </nav>
+
+        <section class="attendance">
+                <div class="attendance-list">
+                  <h1 class="attendance-list-h1">Attendance List</h1>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time In</th>
+                        <th>Logout Time</th>
+                        <th>Report</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01</td>
+                        <td>Sam David</td>
+                        <td>03-24-22</td>
+                        <td>8:00AM</td>
+                        <td>3:00PM</td>
+                        <td><button>View</button></td>
+                      </tr>
+                      <tr class="active">
+                        <td>02</td>
+                        <td>Balbina Kherr</td>
+                        <td>03-24-22</td>
+                        <td>9:00AM</td>
+                        <td>4:00PM</td>
+                        <td><button>View</button></td>
+                      </tr>
+                      <tr>
+                        <td>03</td>
+                        <td>Badan John</td>
+                        <td>03-24-22</td>
+                        <td>8:00AM</td>
+                        <td>3:00PM</td>
+                        <td><button>View</button></td>
+                      </tr>
+                      <tr>
+                        <td>04</td>
+                        <td>Sara David</td>
+                        <td>03-24-22</td>
+                        <td>8:00AM</td>
+                        <td>3:00PM</td>
+                        <td><button>View</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+        </section>
+    
+
+        <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
+        <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+</body>
+</html>
