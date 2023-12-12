@@ -639,11 +639,6 @@ select {
 
 }
 
-#mainmenu{
-    margin: 0 0 0 5em;
-    min-height: 100vh;
-    background: #fff
-}
     
 
 .dashboard {
@@ -653,31 +648,70 @@ select {
     align-items: center;
 }
 
-
-
-#attendance{
+body.attendance{
     margin: 0 0 0 5em;
     min-height: 100vh;
     background: #000000
 }
 
 
-#maintenance{
-    margin: 0 0 0 5em;
-    min-height: 100vh;
+.attendance-list-h1{
+    font-size: 3em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
 }
 
-#loginReport{
+.attendance-list{
     margin: 0 0 0 5em;
-    min-height: 100vh;
-}
-
-#dailylogin{
-    margin: 0 0 0 5em;
-    min-height: 100vh;
-}
-
-#monthlylogin{
-    margin: 0 0 0 5em;
-    min-height: 100vh;
+    width: cover;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  .table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 15px;
+    min-width: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+  }
+  table thead tr{
+    color: #fff;
+    background: #34AF6D;
+    text-align: left;
+    font-weight: bold;
+  }
+  .table th,
+  .table td{
+    padding: 12px 15px;
+  }
+  .table tbody tr{
+    border-bottom: 1px solid #ddd;
+  }
+  .table tbody tr:nth-of-type(odd){
+    background: #f3f3f3;
+  }
+  .table tbody tr.active{
+    font-weight: bold;
+    color: #4AD489;
+  }
+  .table tbody tr:last-of-type{
+    border-bottom: 2px solid #4AD489;
+  }
+  .table button{
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+  }
+  .table button:hover{
+    background: #4AD489;
+    color: #fff;
+    transition: 0.5rem;
 }

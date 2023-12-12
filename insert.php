@@ -6,7 +6,7 @@
         //Checks if HTTP POST method is used
         if (isset($_POST['submit'])) {
             $user_name = $_POST['user_name'];
-            $password = $_POST['password'];
+            $password = $_POST['confirm_password'];
             $email = $_POST['email'];
             
             //SQL query to insert data to 'accounts' table

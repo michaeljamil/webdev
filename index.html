@@ -49,16 +49,16 @@
             </div>
         </form>
         
-        <form action="insert.php" method="post" id="signupForm">
+        <form action="insert.php" method="post" id="signupForm" onsubmit="return validateForm()">
             <h2>Registration</h2>
             <div class="inputBox">
-                <input type="text" name = "user_name" id="user_name" placeholder="Username">
+                <input type="text" name = "user_name" id="user_name" placeholder="Username" required>
             </div>
             <div class="inputBox">
-                <input type="password" id="passwrd" placeholder="Create Password">
+                <input type="password" name="password" id="password" placeholder="Create Password" required>
             </div>
             <div class="inputBox">
-                <input type="password" name="password" placeholder="Confirm Password">
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" onkeyup="validatePassword()" required>
             </div>
             <div class="inputBox">
                 <input type="email" name="email" id="email" placeholder="Email Address">
@@ -104,6 +104,32 @@
             body.classList.remove('employeeLogin');
             body.classList.remove('signup');
         });
+
+        function validatePassword() {
+            var password = document.getElementById("password");
+            var confirm_password = document.getElementsByName("confirm_password")[0];
+
+            if (password.value !== confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords do not match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        function validateForm() {
+            var password = document.getElementById("password");
+            var confirm_password = document.getElementsByName("confirm_password")[0];
+
+            if (password.value !== confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords do not match");
+                return false; // Prevent form submission
+            } else {
+                confirm_password.setCustomValidity('');
+                return true; // Allow form submission
+            }
+        }
+
+
     </script>
 </body>
 </html>
