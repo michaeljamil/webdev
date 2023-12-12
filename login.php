@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-include "index.html";
+
 //Selects database: attendance_db
 $conn ->select_db("attendance_db");
 
@@ -20,7 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if any rows were returned
         if ($result->num_rows > 0) {
             include "menu.html";
+            
         } else {
+            include "index.html";
             echo '<script>displayModal("Invalid username or password");</script>';
         }
     } else {
