@@ -17,22 +17,5 @@
     if (!$conn->query($sql)) {
         echo "Error creating database: " . $conn->error;
     }
-
-    //Selects database: attendance_db
-    $conn ->select_db("attendance_db");
-
-    //Create table "accounts" if there is no existing table
-    $tableSql = "CREATE TABLE IF NOT EXISTS accounts(
-        record_id int(6) AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(50) NOT NULL,
-        password VARCHAR(50) NOT NUll,
-        email VARCHAR(50)
-    )";
-    //Catches error creating table
-    if (!$conn->query($tableSql)) {
-        echo "Error creating table: " . $conn->error;
-    }
-
-    
     
 ?>
