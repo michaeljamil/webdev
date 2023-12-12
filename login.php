@@ -1,6 +1,6 @@
 <?php
 include "connect.php";
-
+include "index.html";
 //Selects database: attendance_db
 $conn ->select_db("attendance_db");
 
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             include "menu.html";
         } else {
-            echo "Invalid username or password";
+            echo '<script>displayModal("Invalid username or password");</script>';
         }
     } else {
         echo "Error: " . $conn->error;
