@@ -11,7 +11,7 @@
         <span></span>
         <span></span>
         <span></span>
-            <form action="admin_login.php" method="post" id="signinForm">
+        <form action="admin_login.php" method="post" id="signinForm">
                     <h2>Admin Login</h2>
                     <div class="inputBox">
                         <input type="text" name="user_name" placeholder="Username" required>
@@ -30,19 +30,19 @@
                     </div>
             </form>
 
-        <form id="employeeForm">
+        <form action="employee_login.php" method="post" id="employeeForm">
             <h2>Employee Login</h2>
             <div class="inputBox">
-                <input type="text" placeholder="Username">
+                <input type="text" name="user_name" placeholder="Username" required>
             </div>
             <div class="inputBox">
-                <input type="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             <div class="inputBox group">
                 <a href="#" id="signup">Sign Up</a>
             </div>
             <div class="inputBox">
-                <input type="submit" value="Sign In">
+                <input type="submit" name="submit" value="Sign In">
             </div>
             <div class="inputBox group">
                 <a href="#"> An Admin? <b id="signup"><u> Admin Login</u></b></a>
@@ -52,7 +52,7 @@
         <form action="insert.php" method="post" id="signupForm" onsubmit="return validateForm()">
             <h2>Registration</h2>
             <div class="inputBox">
-                <input type="text" name = "user_name" id="user_name" placeholder="Username" required>
+                <input type="text" name="user_name" id="user_name" placeholder="Username" required>
             </div>
             <div class="inputBox">
                 <input type="password" name="password" id="password" placeholder="Create Password" required>
@@ -64,12 +64,20 @@
                 <input type="email" name="email" id="email" placeholder="Email Address">
             </div>
             <div class="inputBox">
+                <label for="role">Select Role:</label>
+                <select name="role" id="role" required>
+                    <option value="employees">Employee</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="inputBox">
                 <input type="submit" name="submit" value="Register Account">
             </div>
             <div class="inputBox group">
-                <a href="#"> Already Have an Account? <b id="signin"> Login</b></a>
+                <a href="#">Already Have an Account? <b id="signin">Login</b></a>
             </div>
         </form>
+        
 
         <!-- For Login Pop up -->
         

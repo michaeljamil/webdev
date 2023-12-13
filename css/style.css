@@ -194,6 +194,46 @@ body.employeeLogin .container span::after{
     filter: blur(7px);
 }
 
+/* Custom styling for the role dropdown */
+label[for="role"] {
+    font-weight: 500;
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0%;
+    padding-right: 10px;
+    color: #333;
+}
+
+select[name="role"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+select[name="role"]:focus {
+    border-color: #4CAF50; /* Highlight border on focus */
+}
+
+/* Custom styling for the options */
+select[name="role"] option {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Add some animation */
+select[name="role"] option:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
 form{
     position: absolute;
     left: 0;
