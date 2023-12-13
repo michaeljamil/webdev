@@ -59,6 +59,14 @@
             <span class="link-text">Monthly Report</span>
         </a>
         </li>
+		<li class="navbar-item flexbox-left">
+            <a href="#" onclick="logout()" class="navbar-item-inner flexbox-left">
+                <div class="navbar-item-inner-icon-wrapper flexbox">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </div>
+                <span class="link-text">Logout</span>
+            </a>
+        </li>
     </ul>
     </nav>
 
@@ -110,7 +118,7 @@
 						<thead>
 							<tr>
 								<th>User</th>
-								<th>Date Order</th>
+								<th>Date</th>
 								<th>Status</th>
 							</tr>
 						</thead>
@@ -120,14 +128,14 @@
 									<p>Name</p>
 								</td>
 								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
+								<td><span class="status completed">Active</span></td>
 							</tr>
 							<tr>
 								<td>
 									<p>Name</p>
 								</td>
 								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
+								<td><span class="status pending">Last Login ---</span></td>
 							</tr>
 							<tr>
 								<td>
@@ -152,36 +160,7 @@
 							</tr>
 						</tbody>
 					</table>
-				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
-				</div>
+				</div>	
 			</div>
 		</main>
 
@@ -203,6 +182,16 @@
         const currentTime = new Date();
         alert(`Time Out: ${currentTime.toLocaleTimeString()}`);
     });
+</script>
+<script>
+	function logout() {
+    // Perform logout actions here
+    // For example, you might want to redirect the user to a logout page or send an AJAX request to log them out on the server
+
+    // For now, let's simulate a redirect to a login page
+    window.location.href = "index.html";
+}
+
 </script>
 
 </body>

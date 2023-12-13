@@ -59,6 +59,14 @@
                 <span class="link-text">Monthly Report</span>
             </a>
             </li>
+            <li class="navbar-item flexbox-left">
+              <a href="#" onclick="logout()" class="navbar-item-inner flexbox-left">
+                  <div class="navbar-item-inner-icon-wrapper flexbox">
+                      <ion-icon name="log-out-outline"></ion-icon>
+                  </div>
+                  <span class="link-text">Logout</span>
+              </a>
+          </li>
         </ul>
         </nav>
 
@@ -118,5 +126,15 @@
 
         <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
         <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+        <script>
+          function logout() {
+            // Perform logout actions here
+            // For example, you might want to redirect the user to a logout page or send an AJAX request to log them out on the server
+        
+            // For now, let's simulate a redirect to a login page
+            window.location.href = "index.html";
+        }
+        
+        </script>
 </body>
 </html>
