@@ -1161,7 +1161,7 @@ table.table .avatar {
 
 /* Style the modal */
 .modal {
-    /* display: none;  */
+    display: none; 
     position: fixed; 
     z-index: 9999;
     top:50%;
