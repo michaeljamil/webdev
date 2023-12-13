@@ -1,4 +1,44 @@
-<!-- <!DOCTYPE html>
+<?php
+    include "connect.php";
+
+    //Selects database: majk_db
+    $conn ->select_db("majk_db");
+
+    //Create table "employee" if there is no existing table
+    $tableSql = "CREATE TABLE IF NOT EXISTS employee(
+                emp_id int(6) AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(50) NOT NULL,
+                email VARCHAR(50) NOT NULL,
+                address VARCHAR(100) NOT NULL,
+                phone VARCHAR(50) NOT NULL
+            )";
+    //Catches error creating table
+    if (!$conn->query($tableSql)) {
+        echo "Error creating table: " . $conn->error;
+    }
+
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone']; 
+
+        //SQL query to insert data to 'employee' table
+        $sql = "INSERT INTO employee (name, email, address, phone) VALUES ('$name', '$email', '$address', '$phone')";
+
+        if ($conn->query($sql)) {
+            echo "Record inserted successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    
+        
+    }
+
+    
+    
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,17 +75,12 @@
                                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
                                     <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                                 </div>
-                            </div>
                         </div>
+                    </div>
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span>
-                                    </th>
+            
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
@@ -55,18 +90,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="custom-checkbox">
-                                            <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                            <label for="checkbox1"></label>
-                                        </span>
-                                    </td>
+
+                                    <?php
+                                        $conn ->select_db("majk_db");
+                                        $sql = "SELECT * FROM employee";
+
+                                        $result = $conn->query($sql);
+
+                                        while($row = mysqli_fetch_assoc($result)){
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $row['emp_id']?></td>
+                                        <td><?php echo $row['name']?></td>
+                                        <td><?php echo $row['email']?></td>
+                                        <td><?php echo $row['address']?></td>
+                                        <td><?php echo $row['phone']?></td>
                                     
-                                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                        <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                    </td>
-                                </tr>
+                                        <td>
+                                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                        <?php
+                                            }
+                                        ?>
+
+                                    
                                 
                             </tbody>
                         </table>
@@ -225,14 +274,6 @@
                     <span class="link-text">Monthly Report</span>
                 </a>
                 </li>
-                <li class="navbar-item flexbox-left">
-                    <a href="#" onclick="logout()" class="navbar-item-inner flexbox-left">
-                        <div class="navbar-item-inner-icon-wrapper flexbox">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </div>
-                        <span class="link-text">Logout</span>
-                    </a>
-                </li>
             </ul>
             </nav>
         
@@ -267,14 +308,9 @@
                 });
             });
             </script>
-        <script>
-            function logout() {
-            // Perform logout actions here
-            // For example, you might want to redirect the user to a logout page or send an AJAX request to log them out on the server
-        
-            // For now, let's simulate a redirect to a login page
-            window.location.href = "index.html";
-        } 
-        </script>
 </body>
-</html> -->
+</html>
+
+<?php
+    $conn->close();
+?>
