@@ -2,7 +2,7 @@
 include "connect.php";
 
 //Selects database: attendance_db
-$conn ->select_db("employee_attendance_system");
+$conn ->select_db("majk_db");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['user_name'];

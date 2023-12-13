@@ -1,8 +1,8 @@
 <?php
     include "connect.php";
 
-    //Selects database: attendance_db
-    $conn ->select_db("employee_attendance_system");
+    //Selects database: majk_db
+    $conn ->select_db("majk_db");
 
     //Create table "accounts" if there is no existing table
     $tableSql = "CREATE TABLE IF NOT EXISTS admin(
@@ -22,7 +22,7 @@
         $password = $_POST['confirm_password'];
         $email = $_POST['email'];
         
-        //SQL query to insert data to 'accounts' table
+        //SQL query to insert data to 'admin' table
         $sql = "INSERT INTO admin (username, password, email) VALUES ('$user_name', '$password', '$email')";
 
         if ($conn->query($sql)) {
