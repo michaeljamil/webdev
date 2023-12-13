@@ -2,14 +2,14 @@
 include "connect.php";
 
 //Selects database: attendance_db
-$conn ->select_db("attendance_db");
+$conn ->select_db("employee_attendance_system");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['user_name'];
     $password = $_POST['password'];
 
     // Create the SQL query
-    $sql = "SELECT * FROM accounts
+    $sql = "SELECT * FROM admin
             WHERE username='$username'
             AND password='$password'";
 
