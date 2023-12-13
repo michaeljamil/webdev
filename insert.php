@@ -4,7 +4,7 @@
     //Selects database: majk_db
     $conn ->select_db("majk_db");
 
-    //Create table "accounts" if there is no existing table
+    //Create table "admin" if there is no existing table
     $tableSql = "CREATE TABLE IF NOT EXISTS admin(
                 record_id int(6) AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) NOT NULL,
