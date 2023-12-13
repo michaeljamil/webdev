@@ -2,10 +2,10 @@
     include "connect.php";
 
     //Selects database: attendance_db
-    $conn ->select_db("attendance_db");
+    $conn ->select_db("employee_attendance_system");
 
     //Create table "accounts" if there is no existing table
-    $tableSql = "CREATE TABLE IF NOT EXISTS accounts(
+    $tableSql = "CREATE TABLE IF NOT EXISTS admin(
                 record_id int(6) AUTO_INCREMENT PRIMARY KEY,
                 username VARCHAR(50) NOT NULL,
                 password VARCHAR(50) NOT NUll,
@@ -23,7 +23,7 @@
         $email = $_POST['email'];
         
         //SQL query to insert data to 'accounts' table
-        $sql = "INSERT INTO accounts (username, password, email) VALUES ('$user_name', '$password', '$email')";
+        $sql = "INSERT INTO admin (username, password, email) VALUES ('$user_name', '$password', '$email')";
 
         if ($conn->query($sql)) {
             echo "Record inserted successfully";
