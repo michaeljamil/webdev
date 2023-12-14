@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Create the SQL query
-    $sql = "SELECT * FROM employee
+    $sql = "SELECT * FROM employee_login
             WHERE username='$username'
             AND password='$password'";
 

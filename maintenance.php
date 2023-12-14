@@ -4,16 +4,8 @@
     //Selects database: majk_db
     $conn ->select_db("majk_db");
 
-    //Create table "employee" if there is no existing table
-    $tableSql = "CREATE TABLE IF NOT EXISTS employee(
-                emp_id int(6) AUTO_INCREMENT PRIMARY KEY,
-                name VARCHAR(50) NOT NULL,
-                email VARCHAR(50) NOT NULL,
-                address VARCHAR(100) NOT NULL,
-                phone VARCHAR(50) NOT NULL
-            )";
     //Catches error creating table
-    if (!$conn->query($tableSql)) {
+    if (!$conn->query($tableSqlEmployee)) {
         echo "Error creating table: " . $conn->error;
     }
 
